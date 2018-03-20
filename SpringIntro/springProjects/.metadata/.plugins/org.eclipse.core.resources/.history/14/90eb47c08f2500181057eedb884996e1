@@ -1,0 +1,2 @@
+spring.mvc.view.prefix: /WEB-INF/
+# i set the path for java to find my views which are the jsp file 

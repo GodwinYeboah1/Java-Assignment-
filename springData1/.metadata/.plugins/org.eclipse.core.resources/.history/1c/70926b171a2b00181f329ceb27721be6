@@ -1,0 +1,26 @@
+package com.godwin.DriversLicence.Person;
+
+import java.util.List;
+
+import org.assertj.core.util.Arrays;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class PersonService {
+
+//	do all my crud operation for person
+	@Autowired
+	PersonRepository Ps;
+	
+	
+	public List<Person> getAllPerson() {
+		return (List<Person>) Ps.findAll();
+	}
+	
+	public Person getbyID(long id){
+			return Ps.findById(id);
+	}
+	
+	
+}

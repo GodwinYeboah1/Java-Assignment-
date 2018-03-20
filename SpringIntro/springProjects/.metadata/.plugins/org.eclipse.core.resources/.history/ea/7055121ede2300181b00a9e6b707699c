@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+
+		<a href="/">Return to main Page</a>
+				<h1>My Projects  </h1>
+				
+		<div>
+			
+			<div>
+				<img  width="200px" src="https://mathematicslounge.files.wordpress.com/2014/07/empty_square1.png">
+				<a href=""> Project Name</a>
+				<br>
+				<p>short text</p>
+				
+			
+			</div>
+			<div>
+			
+			
+			</div>
+			<div>
+			
+			
+			</div>
+		
+		
+		</div>
+		
+</body>
+</html>

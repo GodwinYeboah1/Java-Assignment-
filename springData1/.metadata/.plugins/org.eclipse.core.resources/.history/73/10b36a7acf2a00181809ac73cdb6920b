@@ -1,0 +1,5 @@
+package com.godwin.relationships.Repository;
+
+public class CategoryRepository {
+
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="portfolio"/>
+<aop-project name="HelloHuman2"/>
+<aop-project name="displayDate"/>
+<aop-project name="secondProject"/>
+<aop-project name="controllerpractice"/>
+<aop-project name="firstProject"/>
+<aop-project name="stringAssignment"/>
+<aop-project name="SessionPlay"/>
+</aop-reference-model>

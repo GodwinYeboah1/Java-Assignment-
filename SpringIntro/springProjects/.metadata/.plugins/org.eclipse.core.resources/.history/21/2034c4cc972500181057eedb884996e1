@@ -1,0 +1,48 @@
+package com.godwin.SessionPlay;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+// lets add my routes baby 
+
+// add my controller annotation
+// this is similar to the @service 
+@Controller
+public class SessionController {
+//	add my url name
+//	business will call it business logic 
+//	@RequestMapping("")
+//		public String homePage() {
+//			System.out.println("Just got to the home page");
+////			 /WEB-INF/
+//
+//			return "index.jsp";
+//		}	
+	
+	@RequestMapping("")
+	public String homePage1(HttpSession session) {
+//		//display a html that i set up
+////		if there is no variable with count variable we want to create one 
+////		if the view has not count 
+		if(session.getAttribute("count") == "null") {
+//			set the count key and  amount
+			session.setAttribute("count", 0);
+//			System.out.println(" " + (String) session.getAttribute("count"));
+		}
+		System.out.println("saved:  " + (String) session.getAttribute("count"));
+//	else {
+//////			you want to  add to the varibale if it does exist
+//////			we get a object that we have to cast into a integer add 1 
+////			session.setAttribute("count", (Integer) session.getAttribute("count")+ 1);
+////			
+////		}
+		
+		return "index.jsp";
+	}
+
+	
+
+}

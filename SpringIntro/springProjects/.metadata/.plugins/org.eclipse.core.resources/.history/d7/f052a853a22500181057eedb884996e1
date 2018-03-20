@@ -1,0 +1,7 @@
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
+<h3>You have visited <a href= "/">http://localhost:8080</a> <c:out  value= "${count}"/> Times </h3>
+
+<a href="/">Test Another visit</a>
+
+<a href="/reset">reset </a>

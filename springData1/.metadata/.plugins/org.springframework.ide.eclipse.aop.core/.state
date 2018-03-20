@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="ProductCategories"/>
+<aop-project name="DriversLicence"/>
+<aop-project name="books"/>
+<aop-project name="relationships"/>
+<aop-project name="GroupLanguages"/>
+<aop-project name="languages"/>
+</aop-reference-model>

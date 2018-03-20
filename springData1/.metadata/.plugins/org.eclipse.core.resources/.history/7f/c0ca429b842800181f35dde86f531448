@@ -1,0 +1,64 @@
+package com.godwin.GroupLanguages.Controller;
+
+import javax.validation.Valid;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.godwin.GroupLanguages.Services.LanguageServices;
+import com.godwin.GroupLanguages.models.Language;
+
+
+@Controller
+@RequestMapping("/languages")
+public class Languages {
+// member varbiable
+// final makes it constant
+//	keep the same name as your service
+	private final LanguageServices languageService ;
+	
+	
+	
+	
+//	class instructor to add my crud method that talks to the database
+//	add the service
+	public Languages(LanguageServices languageService) {
+//		this step allows me to use my crud method in the class
+		this.languageService = languageService;
+	}
+	
+	
+	@RequestMapping("")
+	public String homePage(Model model ) {
+//		this step allow the computer to find a path to the model backend
+//		just want to send a new language object
+		model.addAttribute("language", new Language());
+		
+		return "LanguageHomePage";
+	}
+	
+	@PostMapping("/edit/{id}")
+	public String createLanguage(@PathVariable("id") int id ,Model model,   @Valid @ModelAttribute("language") Language language , BindingResult error) {
+		
+		if(error.hasErrors()) {
+			return "languages";
+		}else {
+			
+			return "redirect:/edit/{id}";
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,13 @@
+body{
+	backgorund : blue;
+}
+#aboutMe{
+	border: 2px solid black;
+	display: inline-block;
+}
+#projects{
+	border: 2px solid black;
+	display: inline-block;
+	width:200px;
+	
+}

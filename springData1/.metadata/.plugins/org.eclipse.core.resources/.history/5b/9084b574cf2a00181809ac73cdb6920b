@@ -1,0 +1,5 @@
+package com.godwin.relationships.services;
+
+public class CategoryService {
+
+}

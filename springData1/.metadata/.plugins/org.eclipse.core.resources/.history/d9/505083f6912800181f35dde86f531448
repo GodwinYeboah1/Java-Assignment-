@@ -1,0 +1,28 @@
+<html>
+<!-- table at the top  -->
+
+
+<!-- form bellow -->
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<!-- ... -->
+<form:form method="Post" action="/languages/new" modelAttribute="language" >
+    <form:label path="title">Name
+    <form:errors path="title"/>
+    <form:input path="title"/></form:label>
+    
+    <form:label path="creator">Creator
+    <form:errors path="creator"/>
+    <form:textarea path="creator"/></form:label>
+    
+    <form:label path="currentVersion">Version
+    <form:errors path="currentVersion"/>
+    <form:input path="currentVersion"/></form:label>
+    
+    <input type="submit" value="Submit"/>
+</form:form>
+
+<!-- modelAttribute=""
+ -->
+
+</html>

@@ -1,0 +1,21 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<!-- you need the / always it looks for it  -->
+
+<form:form method="Post" action="/languages/new"  >
+   <%--  <form:label path="title">Name
+    <form:errors path="title"/>
+    <form:input path="title"/></form:label>
+    <br>
+    <form:label path="creator">Creator
+    <form:errors path="creator"/>
+    <form:textarea path="creator"/></form:label>
+    <br>
+    <form:label path="currentVersion">Version
+    <form:errors path="currentVersion"/>
+    <form:input path="currentVersion"/></form:label> --%>
+    <br>
+    <input type="submit" value="Submit"/>
+</form:form>

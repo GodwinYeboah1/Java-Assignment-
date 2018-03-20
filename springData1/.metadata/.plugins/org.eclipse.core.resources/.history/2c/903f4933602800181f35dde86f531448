@@ -1,0 +1,62 @@
+package com.godwin.books.controller;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.godwin.books.models.Book;
+import com.godwin.books.service.BookService;
+
+@Controller 
+public class controller {
+	private final BookService bookService;
+	
+	public controller(BookService bookService) {
+		this.bookService = bookService;
+	}
+//	
+		   @RequestMapping("/books")
+		   	public String book(Model model) {
+			   List<Book> books = bookService.allbook();
+			   model.addAttribute("books", books);
+			   return "books";
+		   }
+			        
+	        @RequestMapping("/bookslist")
+	        public String booklist(Model model) {
+	     	List<Book> books = bookService.allbook();
+	     	model.addAttribute("books", books);
+	     	return "booklist";
+	 
+   }
+	        @RequestMapping("/booksdiv")
+	        public String bookDiv(Model model) {
+	        	
+	     	List<Book> books = bookService.allbook();
+	     	model.addAttribute("books", books);
+	     	return "bookdiv";
+	        }
+	     	
+//	     	 finding one book by it id 
+	     	@RequestMapping("/book/{id}")
+	     	public String findIndexById(Model model,  @PathVariable("id") int index){
+	     		Book book = bookService.findBookByIndex(index);
+	     		System.out.println(index);
+	     		model.addAttribute("book", book);
+	     		
+	     		return "showbooks";
+	     	}
+   }
+	
+	
+	
+	
+	
+	
+

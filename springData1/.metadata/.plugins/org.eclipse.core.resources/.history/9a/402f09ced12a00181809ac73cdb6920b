@@ -1,0 +1,32 @@
+package com.godwin.relationships.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.godwin.relationships.services.CategoryService;
+
+@Controller
+@RequestMapping("")
+public class CategoryController {
+
+//	how do you talk to your data base in your contoler
+//	we import are Cateroy Service which will allow me 
+//	to this 
+	private CategoryService cS;
+	
+//	dependence inject to my models can have 
+//	methods that i already created
+	public CategoryController(CategoryService cS) {
+		this.cS = cS;
+	}
+	
+	@RequestMapping("")
+	public String categories(Model model) {
+		model.addAttribute(cS.all());
+		return "categories";
+	}
+	
+	
+	
+}

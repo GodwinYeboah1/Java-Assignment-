@@ -1,0 +1,12 @@
+package com.godwin.services;
+
+import org.springframework.stereotype.Service;
+
+import com.godwin.repositories.LanguageRepository;
+
+@Service
+public class LanguageService {
+	private LanguageRepository lr;
+	
+	
+}

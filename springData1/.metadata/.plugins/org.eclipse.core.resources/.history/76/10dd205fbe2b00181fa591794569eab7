@@ -1,0 +1,20 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<a href="/Dojo/showPage">Dashboard</a>
+<a href="/Dojo/new">Dojo</a>
+<a href="/ninjas/new">ninja</a>
+
+
+<h1>New Ninja</h1>
+<!-- form bellow  -->
+	<form:form action="" MethodAttribute="Ninja">
+	
+		<form:label path="firstname">FirstName:
+			<form:errors  path="firstname"/>
+			<form:input path="firstname"/>
+		</form:label>
+		
+	
+		
+	</form:form>

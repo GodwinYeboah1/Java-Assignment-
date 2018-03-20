@@ -1,0 +1,6 @@
+body{
+	backgorund : blue;
+}
+#aboutMe{
+	border: 2px solid black;
+}

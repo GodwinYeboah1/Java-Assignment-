@@ -1,0 +1,32 @@
+package com.godwin.DojoNinjas.Services;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.godwin.DojoNinjas.Repository.DojoRepository;
+import com.godwin.DojoNinjas.models.Dojo;
+
+@Service
+public class DojoService {
+//	import my crudRep methods
+	private DojoRepository dojoRepository;
+	
+	public DojoService(DojoRepository dojoRepository) {
+		this.dojoRepository = dojoRepository;
+	}
+//	read
+	public List<Dojo> getAll(){
+		return (List<Dojo>) dojoRepository.findAll();
+		
+	}
+//	create
+	public void create() {
+		dojoRepository.save();
+	}
+	
+	
+	
+		
+}

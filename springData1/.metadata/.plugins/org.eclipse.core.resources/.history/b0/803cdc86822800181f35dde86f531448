@@ -1,0 +1,31 @@
+package com.godwin.GroupLanguages.Services;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Service;
+
+import com.godwin.GroupLanguages.models.Language;
+
+@Service
+public class LanguageServices {
+
+//all my crud data goes bellow
+	
+//create a array list that can store every possible data
+//	it will be my fake db
+	ArrayList<Language> languages = new ArrayList<Language>();
+	
+	
+//create a method that returns all Languages
+	public ArrayList<Language> allLanguages(){
+		
+		return languages;
+	}
+	
+	
+
+	
+	
+	
+	
+}

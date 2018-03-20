@@ -1,0 +1,44 @@
+package com.godwin.DriversLicence.Licence;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.assertj.core.util.Arrays;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class PersonService {
+
+//	do all my crud operation for person
+	@Autowired
+	LicenceRepository LicenceRepository;
+	public PersonService(LicenceRepository Ps) {
+		
+		this.LicenceRepository=LicenceRepository;
+		
+	}
+	private ArrayList<Licence> Persons = new ArrayList<>();
+	
+	public ArrayList<Licence> all(){
+		return Persons;
+	}
+	
+	
+	public Licence getAllPerson() {
+		return (Licence) LicenceRepository.findAll();
+	}
+	
+	public Licence getbyID(long id){
+			return LicenceRepository.findById(id);
+	}
+	
+	public void createPerson(Licence person) {
+		LicenceRepository.save(person);
+	}
+	
+	
+	
+	
+	
+}

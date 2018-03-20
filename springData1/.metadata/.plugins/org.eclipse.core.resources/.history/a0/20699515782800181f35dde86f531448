@@ -1,0 +1,9 @@
+package com.godwin.GroupLanguages.models;
+
+// were i create my tables
+public class Language {
+	private String title;
+	private String creator;
+	private String action;
+	
+}

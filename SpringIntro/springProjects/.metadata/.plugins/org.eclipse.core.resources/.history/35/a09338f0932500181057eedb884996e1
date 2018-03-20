@@ -1,0 +1,30 @@
+package com.godwin.SessionPlay;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+// lets add my routes baby 
+
+// add my controller annotation
+// this is similar to the @service 
+@Controller
+public class SessionController {
+//	add my url name
+//	business will call it business logic 
+//	@RequestMapping("")
+//		public String homePage() {
+//			System.out.println("Just got to the home page");
+////			 /WEB-INF/
+//
+//			return "index.jsp";
+//		}	
+	
+	@RequestMapping("")
+	public String homePage1() {
+//		display a html that i set up
+		return "index.jsp";
+	}
+
+	
+
+}

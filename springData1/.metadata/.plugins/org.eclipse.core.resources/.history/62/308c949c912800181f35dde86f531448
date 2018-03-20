@@ -1,0 +1,102 @@
+package com.godwin.GroupLanguages.Controller;
+
+import javax.validation.Valid;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.godwin.GroupLanguages.Services.LanguageServices;
+import com.godwin.GroupLanguages.models.Language;
+
+
+@Controller
+public class Languages {
+// member varbiable
+// final makes it constant
+//	keep the same name as your service
+	private final LanguageServices languageService ;
+	
+	
+	
+	
+//	class instructor to add my crud method that talks to the database
+//	add the service
+	public Languages(LanguageServices languageService) {
+//		this step allows me to use my crud method in the class
+		this.languageService = languageService;
+	}
+	
+	
+	@RequestMapping("/languages")
+	public String homePage(Model model ) {
+//		this step allow the computer to find a path to the model backend
+//		just want to send a new language object
+		model.addAttribute("language", new Language());
+		
+		return "LanguageHomePage";
+	}
+//	creating a new entry
+	
+	@PostMapping("/languages/new")
+	 public String createLanguage(@Valid @ModelAttribute("language") Language language, BindingResult result ) {
+		if(result.hasErrors()) {
+			return "LanguageHomePage";
+		}else {
+//			else i want to catch the data and save it to the model
+//			i created the create method in the service
+			languageService.create(language);
+			
+			return "redirect:/languages/edit/{id}";
+		}
+	}
+	
+	
+	
+	
+	
+	
+// get
+	@RequestMapping("languages/edit/{id}")
+	public String getNewLanguage(@PathVariable("id") int id ,Model model,   @Valid @ModelAttribute("language") Language language , BindingResult error) {
+		
+		if(error.hasErrors()) {
+			return "languageHomePage";
+		}else {
+			Language foundLanguages = languageService.getByIdex(id);
+			model.addAttribute("language", foundLanguages);
+			
+			return "redirect:/edit/+id";
+		}
+	
+		
+	}
+
+	
+	
+//	post 
+	@PostMapping("/edit/{id}")
+	public String createLanguage(@PathVariable("id") int id ,Model model,   @Valid @ModelAttribute("language") Language language , BindingResult error) {
+		
+		if(error.hasErrors()) {
+			return "languages";
+		}else {
+			languageService.getByIdex(id);
+			
+			return "redirect:/edit/+id";
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

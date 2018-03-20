@@ -1,0 +1,52 @@
+package com.godwin.displayDate;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import  java.util.Date;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class displayDateController {
+
+	@RequestMapping("")
+	public String homePage() {
+		return "homePage.jsp";
+	}
+	
+	@RequestMapping("/date")
+	public String datePage(Model model) {
+		Date date = new Date();
+//		we created a date format object with the new  SimpleDateFormat
+		SimpleDateFormat Dformat = new SimpleDateFormat("EEEE, dd MMM YYYY");
+		// add addAttribute() add data in your views with is your essential page
+//		dformat object that we created has a format method that to format the date data
+		model.addAttribute("Date", Dformat.format(date));
+//		we return the data in the datapage.jsp 
+		return "dataPage.jsp";
+	}
+	//Date.now()
+//	when i hit the time route 
+//	request mapinng() looks for the time route 
+	@RequestMapping("/time")
+	
+//	the Model object allows me to store date to our view 
+//	we access the data with the key pair value
+	public String timePage(Model model) {
+//		i created a instantiate of a date object
+//		and named it date 
+		Date date = new Date();
+//		i created a simpledate format  object  
+//		and named it foramt
+		SimpleDateFormat format = new SimpleDateFormat("hh :mm :ss a");
+//		with the model object i created i will set the formated date object  with a key of 
+//		time 
+//		{" time" :  format.format(date)}
+		model.addAttribute("Time", format.format(date));
+//		all of this data is going to the time page html 
+		
+		return "timePage.jsp";
+	}
+}

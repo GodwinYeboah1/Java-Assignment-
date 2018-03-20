@@ -1,0 +1,29 @@
+package com.godwin.DriversLicence.Person;
+
+import javax.validation.Valid;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+public class PersonController {
+
+	@RequestMapping(method=RequestMethod.GET, value="/persons/new")
+	public String homePage(@Valid @ModelAttribute("Person") Person person, BindingResult res, Model model) {
+		if(res.hasErrors()) {
+			return "Person";
+		}
+		model.addAttribute("Person",person);
+		
+		System.out.println("HomePage");
+		return "Person";
+	}
+	
+	
+	
+	
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+		<h1>Hi, I'm Godwin</h1>
+		<h4>Welcome to my portfolio</h4>
+		
+		<div>
+		<a href="/aboutMe"> About Me</a>
+		
+			<div id="aboutMe">
+			   <p> My name is godwin Yeboah and i am  fullStack developer</p>
+			   <p> I love to create  and build web apps </p>
+			</div>
+		
+		</div>
+		
+</body>
+</html>

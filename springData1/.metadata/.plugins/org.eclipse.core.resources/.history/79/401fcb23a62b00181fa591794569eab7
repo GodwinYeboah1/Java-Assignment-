@@ -1,0 +1,7 @@
+package com.godwin.DojoNinjas.Repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface NinjaRepository extends CrudRepository {
+
+}

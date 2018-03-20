@@ -1,0 +1,11 @@
+package com.godwin.DriversLicence.Licence;
+
+import javax.persistence.Id;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface LicenceRepository extends CrudRepository<Licence, Id>{
+
+	
+	
+}

@@ -1,0 +1,44 @@
+package com.godwin.GroupLanguages.Controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.godwin.GroupLanguages.Services.LanguageServices;
+
+
+@Controller
+public class Languages {
+// member varbiable
+// final makes it constant
+//	keep the same name as your service
+	private final LanguageServices languageService ;
+	
+	
+	
+	
+//	class instructor to add my crud method that talks to the database
+//	add the service
+	public Languages(LanguageServices languageService) {
+//		this step allows me to use my crud method in the class
+		this.languageService = languageService;
+	}
+	
+	
+	@RequestMapping("/languages")
+	public String homePage(Model model ) {
+		model.addAttribute("languageService", languageService)
+		
+		return "LanguageHomePage";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

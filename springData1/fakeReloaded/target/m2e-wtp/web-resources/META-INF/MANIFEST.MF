@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: fakeReloaded
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: godwinyeboah
+Implementation-Vendor-Id: com.project.fakeReloaded
+Build-Jdk: 1.8.0_161
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+Main-Class: com.project.fakeReloaded.fakeReloadedApplication
+

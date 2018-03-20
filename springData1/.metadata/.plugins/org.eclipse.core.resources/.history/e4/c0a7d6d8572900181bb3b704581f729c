@@ -1,0 +1,31 @@
+package com.godwin.services;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Service;
+
+import com.godwin.models.Language;
+import com.godwin.repositories.LanguageRepository;
+
+@Service
+public class LanguageService {
+	private LanguageRepository lr;
+	
+	
+	public LanguageService() {
+		
+	}
+	
+	public ArrayList<Language> getAll() {
+//		do this because the database can return many data
+		return (ArrayList<Language>)lr.findAll();
+		
+	}
+	
+	
+	
+	
+}
+
+
+

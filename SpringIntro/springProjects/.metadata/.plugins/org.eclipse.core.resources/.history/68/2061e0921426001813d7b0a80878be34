@@ -1,0 +1,15 @@
+package com.godwin.HelloHuman2;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class HelloHumanController {
+
+	//add my path 
+	@RequestMapping("")
+	public String homepage() {
+		
+		return "home.jsp";
+	}
+	
+}

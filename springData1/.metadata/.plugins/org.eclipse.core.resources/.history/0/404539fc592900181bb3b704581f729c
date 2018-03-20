@@ -1,0 +1,44 @@
+package com.godwin.services;
+//step 3
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Service;
+
+import com.godwin.models.Language;
+import com.godwin.repositories.LanguageRepository;
+
+@Service
+public class LanguageService {
+//	we need to have access to the repository 
+//	let us access 
+//	languageRepository is a wrapper that comes with the  update, find ,delete and save methods 
+//	that are essential for the database
+//	LanguageRepository is an Object 
+	private LanguageRepository lR;
+//	we want to inject the Repository to this contructor so when it is called it will instanly have those methods
+	
+	public LanguageService(LanguageRepository lR) {
+		this.lR = lR;
+	}
+//	in the create method we give the type first which is Language 
+	public void create(Language language) {
+//		because of the Repository wrapper and because it is in inject in the LanguageService construct
+//		we can use the data methods to save it to the database 
+		lR.save(language);
+		
+	}
+	
+	
+	public ArrayList<Language> getAll() {
+//		do this because the database can return many data
+		return (ArrayList<Language>)lR.findAll();
+		
+	}
+	
+	
+	
+	
+}
+
+
+

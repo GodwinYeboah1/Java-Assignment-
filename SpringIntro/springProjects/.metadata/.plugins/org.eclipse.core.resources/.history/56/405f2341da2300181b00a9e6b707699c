@@ -1,0 +1,12 @@
+body{
+	backgorund : blue;
+}
+h1 {
+      color: yellow;
+}
+h3{
+	color:red;
+}
+h4{
+	color:green;
+}

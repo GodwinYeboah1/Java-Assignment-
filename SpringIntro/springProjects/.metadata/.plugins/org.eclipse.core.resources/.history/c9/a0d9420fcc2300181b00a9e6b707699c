@@ -1,0 +1,17 @@
+
+package com.codingDojo.controllerspractice.controllers;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+ 
+public class HomeController {
+//	a route verb 
+	@RequestMapping("/")
+//	and its methods
+	public String Hello() {
+		return "hello world";  
+	}
+
+}

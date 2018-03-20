@@ -1,0 +1,16 @@
+package com.godwin.DojoNinjas.Controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/ninjas")
+public class NinjaController {
+
+	@RequestMapping("/new")
+	public String getHomePage() {
+	
+		return "ninja";
+	}
+
+}

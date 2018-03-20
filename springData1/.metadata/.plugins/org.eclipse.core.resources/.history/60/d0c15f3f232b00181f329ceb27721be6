@@ -1,0 +1,38 @@
+package com.godwin.DriversLicence.Licence;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+public class LIcenceController {
+
+	@Autowired
+	LicenceService licenceService;
+	
+	@RequestMapping(method=RequestMethod.GET, value="/persons/new")
+	public String homePage(@Valid @ModelAttribute("Person") Licence person, BindingResult res, Model model) {
+		if(res.hasErrors()) {
+			model.addAttribute("Person",person);
+			return "Person";
+		}
+		
+		System.out.println("HomePage");
+		return "Person";
+	}
+	
+	@RequestMapping(method=RequestMethod.POST ,value="/save/new")
+	public  String create(@ModelAttribute("Person") Licence person, Model model) {
+		 licenceService.createPerson(person);
+		model.addAttribute("Person");
+		return "redirect:/persons/new";
+	}
+	
+	
+}

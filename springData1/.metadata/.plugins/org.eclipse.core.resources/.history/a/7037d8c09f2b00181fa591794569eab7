@@ -1,0 +1,14 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<p> created a ninja paged</p>
+
+<h1>New Ninja</h1>
+
+
+<form:form>
+	<form:label path="">
+		
+	</form:label>
+
+
+</form:form>
